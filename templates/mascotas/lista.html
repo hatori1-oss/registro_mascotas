@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mis Mascotas</title>
+</head>
+<body>
+    <h2>Mis Mascotas</h2>
+    <ul>
+        {% for mascota in mascotas %}
+            <li>
+                {{ mascota.nombre }} ({{ mascota.especie }})
+                {% if mascota.imagen %}
+                    <br><img src="{{ mascota.imagen.url }}" width="150">
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No has registrado mascotas aún.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'registrar_mascota' %}">Registrar nueva mascota</a>
+</body>
+</html>
+

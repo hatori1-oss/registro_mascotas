@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle de Mascota</title>
+</head>
+<body>
+    <h1>{{ mascota.nombre }}</h1>
+    <p>Color: {{ mascota.color }}</p>
+    <p>Raza: {{ mascota.raza }}</p>
+    <p>Edad: {{ mascota.edad }}</p>
+    {% if mascota.foto %}
+        <img src="{{ mascota.foto.url }}" alt="Foto de {{ mascota.nombre }}" width="200">
+    {% endif %}
+</body>
+</html>
+
